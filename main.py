@@ -1,21 +1,6 @@
-from typing import Tuple
-from dotenv import load_dotenv
 import gradio as gr
 
-load_dotenv()
-
-def run_agent() -> Tuple[str, str]:
-    """
-    Full agent loop:
-    1) LLM-planned tool usage
-    2) Execute plan via MCP
-    3) LLM reasoning over results
-    4) Return (summary, agent_log)
-    """
-    agent_log: str = ''
-    summary: str = ''
-
-    return summary, agent_log
+from agent.run import run_agent
 
 with gr.Blocks(title="Daily Dev Recap Agent") as demo:
     gr.Markdown("## 🤖 Daily Dev Recap (MCP-style Agent)")
